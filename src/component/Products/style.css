@@ -1,33 +1,26 @@
-body{
-    background-color: bisque;
+body {
+  background-color: bisque;
+  flex-wrap: wrap;
+  width: 30%;
 }
-.books{
-    width: 30%;
+.img {
+  width: 300px;
+  height: 200px;
+}
+.bookscontainer {
+  width: 70%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 50px;
+  align-content: center;
+  padding-left: 150px;
+  padding-top: 100px;
+  margin-top: 100px;
+}
+
+.raper {
   display: flex;
-  
-  justify-content: space-between;
-   /* flex-direction: row; */
-   background-color: blue;
-  
-
- 
-}
-.books h1{
-    width: 1%;
-    display: inline;
-}
-.books img{
-    width: 95%;
-    display: block;
-}
-.raper{
-    display: flex;
-     flex-wrap:wrap;
-    /* flex-direction: column;
-    justify-content: space-around; */
-background-color: crimson;
-    width: 100%;
-    
-
-
+  justify-content: space-around;
+  width: auto;
+  flex-wrap: wrap;
 }

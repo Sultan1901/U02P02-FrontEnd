@@ -1,105 +1,92 @@
-import React, { Component } from "react";
+import React from "react";
+import { useNavigate } from "react-router";
+import { useState, useEffect } from "react";
 import axios from "axios";
+const Login = () => {
+  const navigate = useNavigate();
+  const [users, setUsers] = useState([]);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-export default class Signup extends Component {
-  constructor() {
-    super();
-    this.state = {
-     
-      email: "",
-      password: "",
-    };
+  const getData = async () => {
+    const items = await axios.get("http://localhost:5000/users/read");
+    setUsers(items.data);
+    console.log(items.data);
   
-    this.changeEmail = this.changeEmail.bind(this);
-    this.changePassword = this.changePassword.bind(this);
-    this.submitSignUp = this.submitSignUp.bind(this);
-  }
+  };
 
-  
-  
-
-  changeEmail(e) {
-    this.setState({
-      email: e.target.value,
-    });
-  }
-
-  changePassword(e) {
-    this.setState({
-      password: e.target.value,
-    });
-  }
-
-  submitSignUp(event) {
-    event.preventDefault();
-    const riges = {
-     
-     
-      email: this.state.email,
-      password: this.state.password,
-      
-    };
+  useEffect(() => {
+    getData();
     
-    // console.log(this.state.fullName.length);
-    // console.log(this.state.userName.length);
-    // console.log(this.state.email.length);
-    // console.log(this.state.password.length);
-    if (
-     
-     
-      this.state.email.length > 0 &&
-      this.state.password.length > 0
+  }, []);
 
-      
-    ) {
-      axios
-        .get("http://localhost:5000/users/read", riges)
-        .then((res) => console.log(res));
-        console.log('ok');
+  const registerPage = () => {
+    navigate("/signup");
+  };
 
-      window.location = "/books";
+  const submitlogin = (e) => {
+    e.preventDefault();
+    let ckeck = false;
+    // eslint-disable-next-line
+    // console.log(users);
+    // console.log(users[0].email);
+    // console.log("log email",email);
+    // console.log("log pass",password);
+    users.map((item) => {
+        console.log(item.email);
+        console.log(item.password);
+      if (item.email === email && item.password === password) {
+        ckeck = true;
+      }
+    });
+    if (ckeck) {
+      try {
+        localStorage.setItem(
+          "newUser",
+          JSON.stringify({ email })
+        );
+        navigate("/books");
+      } catch (error) {
+        console.log("error ", error);
+      }
+    } else {
+      let myWindow = window.open("", "", "width=200,height=100");
+      myWindow.document.write("<p> Wrong email or password </p>");
+      myWindow.focus();
+    }
+  };
 
-      this.setState({
-        
-      
-        email: "",
-        password: "",
-      });
-    } else window.alert("fill all fields");
-  }
-
-  render() {
-    return (
-      <div>
-        <div className="contener">
+  return (
+    <div>
+      <div className="contener">
           <div className="formDiv">
-            <form onSubmit={this.submitSignUp}>
-             
-            
+            <form onSubmit={submitlogin}>
               
               <input
-                type="email"
+                type="text"
                 placeholder="Email"
-                onChange={this.changeEmail}
-                value={this.state.email}
+                onChange={(e) => setEmail(e.target.value)}
+                
                 className="form-control form-group"
               />
               <input
-                type="password"
+                type="text"
                 placeholder="Password"
-                onChange={this.changePassword}
-                value={this.state.password}
+                onChange={(e) => setPassword(e.target.value)}
+                
                 className="form-control form-group"
               />
               <input
                 type="submit"
                 className="btn btn-danger btn-block"
-                value="submit"
+                value="Login"
               />
             </form>
           </div>
         </div>
-      </div>
-    );
-  }
-}
+      <p onClick={registerPage}>Don't have an account ?</p>
+    </div>
+  );
+};
+
+export default Login;

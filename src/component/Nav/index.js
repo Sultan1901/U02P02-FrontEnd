@@ -1,18 +1,33 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+// import "./style.css";
 
 const Nav = () => {
+  const location = useLocation();
+  const { pathname } = location;
+  const splitLocation = pathname.split("/");
+  /* const navigate = useNavigate()
+    const goBack = () => {
+        navigate.goBack()
+    } */
+
   return (
-    <div>
-      <ul>
-        <li>
-          {/* <Router>
-            <Routes to="./component/home">Home />
-           </Router> */}
-        </li>
+    <div className="nav">
+      <ul className="ulNav">
+        {/* <li className={splitLocation[1] === "" ? "active" : ""}> */}
+       <li>   <Link to="/">Home</Link>{" "}</li>
+         <li> <Link to="/books">Products</Link>{" "}</li>
+         <li><Link to="/Signin">Signin</Link>{" "}</li>
+         <li><Link to="/Sigup">Sigup</Link>{" "}</li>
+         <li><Link to="/Stories">Stories</Link>{" "}</li>
+         <li><Link to="/LifeStyle">LifeStyle</Link>{" "}</li>
+         <li><Link to="/Essays">Essays</Link>{" "}</li>
+         <li><Link to="/Cultural">Cultural</Link>{" "}</li>
+        {/* </li> */}
+      
       </ul>
     </div>
   );
 };
-
 export default Nav;
