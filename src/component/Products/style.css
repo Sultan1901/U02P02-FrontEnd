@@ -1,0 +1,33 @@
+body{
+    background-color: bisque;
+}
+.books{
+    width: 30%;
+  display: flex;
+  
+  justify-content: space-between;
+   /* flex-direction: row; */
+   background-color: blue;
+  
+
+ 
+}
+.books h1{
+    width: 1%;
+    display: inline;
+}
+.books img{
+    width: 95%;
+    display: block;
+}
+.raper{
+    display: flex;
+     flex-wrap:wrap;
+    /* flex-direction: column;
+    justify-content: space-around; */
+background-color: crimson;
+    width: 100%;
+    
+
+
+}
