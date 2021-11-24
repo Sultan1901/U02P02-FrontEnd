@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 // import Style from './style.css'
+import { useNavigate } from "react-router";
+
 
 
 const Products = () => {
@@ -30,6 +32,7 @@ const Products = () => {
             <h4>{item.name}</h4>
             <h5>{item.price}</h5>
             <h5>{item.kind}</h5>
+            <button >Add To Cart</button>
           </div>
         );
       })}

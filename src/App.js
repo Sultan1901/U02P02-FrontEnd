@@ -11,11 +11,13 @@ import Essays from "./component/Essays";
 import Cultural from "./component/Cultural";
 import Stories from "./component/Stories";
 import Nav from "./component/Nav";
+import Logout from "./component/Logout";
 
 
 function App() {
   return (
     <>
+    <div className="home">
     <Nav/>
    <Routes>
    <Route exact path ="/" element={<Home/>}/>
@@ -27,8 +29,10 @@ function App() {
      <Route exact path ="/Cultural" element={<Cultural/>}/>
      <Route exact path ="/Stories" element={<Stories/>}/>
      <Route exact path ="/Nav" element={<Nav/>}/>
+     <Route exact path ="/logout" element={<Logout/>}/>
+
    </Routes>
-    </>
+    </div></>
   );
 }
 export default App;

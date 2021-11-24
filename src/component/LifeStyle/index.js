@@ -30,6 +30,7 @@ const Products = () => {
             <h4>{item.name}</h4>
             <h5>{item.price}</h5>
             <h5>{item.kind}</h5>
+            <button >Add To Cart</button>
           </div>
         );
       })}

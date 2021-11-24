@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router";
 import { useState, useEffect } from "react";
+import Style from './style.css'
 import axios from "axios";
 const Login = () => {
   const navigate = useNavigate();
@@ -50,9 +51,9 @@ const Login = () => {
         console.log("error ", error);
       }
     } else {
-      let myWindow = window.open("", "", "width=200,height=100");
-      myWindow.document.write("<p> Wrong email or password </p>");
-      myWindow.focus();
+      let myWindow = alert(" Wrong email or password");
+      // myWindow.document.write("<p> Wrong email or password </p>");
+      // myWindow.focus();
     }
   };
 
@@ -60,8 +61,8 @@ const Login = () => {
     <div>
       <div className="contener">
           <div className="formDiv">
-            <form onSubmit={submitlogin}>
-              
+            <form className="box" onSubmit={submitlogin}>
+              <h2>Login</h2>
               <input
                 type="text"
                 placeholder="Email"
@@ -70,7 +71,7 @@ const Login = () => {
                 className="form-control form-group"
               />
               <input
-                type="text"
+                type="password"
                 placeholder="Password"
                 onChange={(e) => setPassword(e.target.value)}
                 

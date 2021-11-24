@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Style from './style.css'
 
 export default class Signup extends Component {
   constructor() {
@@ -73,8 +74,8 @@ export default class Signup extends Component {
       <div>
         <div className="contener">
           <div className="formDiv">
-            <form onSubmit={this.submitSignUp}>
-             
+            <form className="box" onSubmit={this.submitSignUp}>
+             <h2>Signup</h2>
               <input
                 type="text"
                 placeholder="User Name"
@@ -83,7 +84,7 @@ export default class Signup extends Component {
                 className="form-control form-group"
               />
               <input
-                type="email"
+                type="text"
                 placeholder="Email"
                 onChange={this.changeEmail}
                 value={this.state.email}
