@@ -46,7 +46,7 @@ const Login = () => {
           "newUser",
           JSON.stringify({ email })
         );
-        navigate("/books");
+        navigate("/Category");
       } catch (error) {
         console.log("error ", error);
       }
@@ -85,7 +85,7 @@ const Login = () => {
             </form>
           </div>
         </div>
-      <p onClick={registerPage}>Don't have an account ?</p>
+      {/* <p onClick={registerPage}>Don't have an account ?</p> */}
     </div>
   );
 };

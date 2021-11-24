@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Style from './style.css'
+import { Navigate } from "react-router";
 
 export default class Signup extends Component {
   constructor() {
@@ -57,8 +58,10 @@ export default class Signup extends Component {
       axios
         .post("http://localhost:5000/users/add", riges)
         .then((res) => console.log(res));
+        
+    alert('Signed up successfly')
+    window.location='/signin'
 
-    //   window.location = "/home";
 
       this.setState({
         
@@ -81,25 +84,23 @@ export default class Signup extends Component {
                 placeholder="User Name"
                 onChange={this.changeUserName}
                 value={this.state.name}
-                className="form-control form-group"
               />
               <input
                 type="text"
                 placeholder="Email"
                 onChange={this.changeEmail}
                 value={this.state.email}
-                className="form-control form-group"
               />
               <input
                 type="password"
                 placeholder="Password"
                 onChange={this.changePassword}
                 value={this.state.password}
-                className="form-control form-group"
+               
               />
               <input
                 type="submit"
-                className="btn btn-danger btn-block"
+               
                 value="submit"
               />
             </form>

@@ -1,4 +1,5 @@
 .ulNav{
+    margin-right: 200px;
     font-size: 20px;
 display: flex;
 align-items: flex-end;
@@ -10,11 +11,19 @@ justify-content: space-around;
     
 text-decoration: none;
 }
+
+.nav{
+    background-color: darkmagenta;
+}
 a{
     text-decoration: none;
     color: coral;
-    background-color: darkblue;
+    background-color: rgba(0, 72, 139, 0.966);
     border-radius: 5px;
+    position: fixed;
+    margin-top: 20px;
+    margin-left: 30px;
+ 
 
 
 }

@@ -12,6 +12,8 @@ import Cultural from "./component/Cultural";
 import Stories from "./component/Stories";
 import Nav from "./component/Nav";
 import Logout from "./component/Logout";
+import Category from "./component/Category";
+
 
 
 function App() {
@@ -22,6 +24,7 @@ function App() {
    <Routes>
    <Route exact path ="/" element={<Home/>}/>
      <Route exact path ="/Books" element={<Products/>}/>
+     <Route exact path ="/Category" element={<Category/>}/>
      <Route exact path ="/signup" element={<Signup/>}/>
      <Route exact path ="/signin" element={<Signin/>}/>
      <Route exact path ="/LifeStyle" element={<LifeStyle/>}/>

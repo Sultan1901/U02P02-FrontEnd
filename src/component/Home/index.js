@@ -8,20 +8,29 @@ import Style from './style.css'
 // import Nav from "./component/Nav";
 export const Home = () => {
     const navigate = useNavigate()
-    const kick =()=>{
+    const signin =()=>{
     
        
        
          navigate("/signin");
     }
+    const signup =()=>{
+    
+       
+       
+        navigate("/signup");
+   }
+    
+    
     return (
         
         <div>
-            <div className="home">
+            <div id="home">
             <h1>Welcome To Home of Books</h1>
-            <h1>plese login here</h1>
+            <h1>plese Signup or login here</h1>
             
-            <button className='nav1' onClick={kick}>Login</button>
+            <button className='nav1' onClick={signin}>Login</button>
+            <button className='nav1' onClick={signup}>signup</button>
 
             
             {/* <Nav /> */}

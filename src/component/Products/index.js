@@ -26,10 +26,10 @@ const Products = () => {
 }
   return (
     <>
-     <input onClick={kick}
+     <input onClick={kick} className="log"
                 type="submit"
                 
-                value="Kick you out"
+                value="LogOut"
               />
     <div className="bookscontainer">
       {book.map((item) => {
@@ -39,7 +39,7 @@ const Products = () => {
             <img src={item.img} className="img"/>
             <h4>{item.name}</h4>
             <h4>{item.price}</h4>
-            <h4>{item.kind}</h4>
+         <h4>{item.kind}</h4>
             <button >Add To Cart</button>
            
           </div>
