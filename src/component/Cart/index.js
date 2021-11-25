@@ -1,9 +1,11 @@
 import React from "react";
-import Nav from "../Nav";
+// import Nav from "../Nav";
 import axios from "axios";
 import { useNavigate } from "react-router";
 import { useState, useEffect } from "react";
-const Favorite = () => {
+import Fot from './../fot'
+import './style.css'
+const Cart = () => {
   const navigate = useNavigate();
   const [account, setAccount] = useState([]);
   const [local, setLocal] = useState([]);
@@ -15,48 +17,57 @@ const Favorite = () => {
 
   const getData = async () => {
     const item = await axios.get(
-      `http://localhost:5000/user/favorite/${local.email}`
+      `http://localhost:5000/users/cart/${local.email}`
     );
     setAccount(item.data);
   };
 
   useEffect(() => {
     getLocalStorage();
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
     getData();
+    // eslint-disable-next-line
   }, [local]);
 
-  const itemInfo = (name) => {
-    console.log(name);
-    navigate(`/character/name/${name}`);
-  };
+  // Navigate to character info
 
+
+  // Remove from favorite
   const removeFavorite = (id) => {
-    axios.put(`http://localhost:5000/user/removeFav/${local.email}/${id}`);
+    axios.put(`http://localhost:5000/users/removecart/${local.email}/${id}`);
     getLocalStorage();
   };
   return (
+    <>
     <div>
-      <Nav />
-      <p>Favorite</p>
+      {/* <Nav /> */}
+      <p>cart</p>
       {account.length &&
         account.map((item, i) => {
           return (
-            <div>
-              <div onClick={() => itemInfo(item.name)}>
-                {" "}
-                <h1>{item.name}</h1>
-                <img src={item.img} alt="character" />
-              </div>
-              <button onClick={() => removeFavorite(item._id)}> Remove</button>
+           <div className="books">
+              <img src={item.img} className="img" />
+              <h4>{item.name}</h4>
+              <h4>{item.price}</h4>
+              <h4>{item.kind}</h4>
+              <button
+                
+              >
+                Add To Cart
+              </button>
             </div>
           );
         })}
+      </div>
+      <Fot />
+    </>
+        )}
      
-    </div>
-  );
-};
+   
+  
 
-export default Favorite;
+
+export default Cart;

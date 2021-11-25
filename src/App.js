@@ -12,6 +12,8 @@ import Nav from "./component/Nav";
 import Logout from "./component/Logout";
 import Category from "./component/Category";
 import Fot from "./component/fot";
+import Cart from "./component/Cart";
+
 import "./App.css";
 
 function App() {
@@ -30,8 +32,8 @@ function App() {
         <Route exact path="/Stories" element={<Stories />} />
         <Route exact path="/Nav" element={<Nav />} />
         <Route exact path="/logout" element={<Logout />} />
+        <Route exact path="/Cart" element={<Cart />} />
       </Routes>
-      
     </div>
   );
 }
