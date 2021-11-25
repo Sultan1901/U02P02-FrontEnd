@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 // import Style from './style.css'
 import { useNavigate } from "react-router";
+import Fot from './../fot/index'
 
 
 const Products = () => {
@@ -27,26 +28,26 @@ const Products = () => {
      navigate("/signin");
 }
   return (
-     <> <input onClick={kick} className="log"
-     type="submit"
-     
-     value="LogOut"
-   /> <h1>Stories </h1>
-    <div className="bookscontainer">
-       
-      {book.map((item) => {
-        return (
-        
-          <div className="books">  
-            <img src={item.img} className="img"/>
-            <h4>{item.name}</h4>
-            <h4>{item.price}</h4>
-            <h4>{item.kind}</h4>
-            <button >Add To Cart</button>
-          </div>
-        );
-      })}
-    </div></>)
+    <>
+      {" "}
+      <input onClick={kick} className="log" type="submit" value="LogOut" />{" "}
+      <h1 className="h1h">Stories </h1>
+      <div className="bookscontainer">
+        {book.map((item) => {
+          return (
+            <div className="books">
+              <img src={item.img} className="img" />
+              <h4>{item.name}</h4>
+              <h4>{item.price}</h4>
+              <h4>{item.kind}</h4>
+              <button>Add To Cart</button>
+            </div>
+          );
+        })}
+      </div>
+      <Fot />
+    </>
+  );
 }
 
 export default Products

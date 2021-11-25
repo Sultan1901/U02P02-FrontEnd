@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Style from './style.css'
+// import Style from './style.css'
 import { Navigate } from "react-router";
 
 export default class Signup extends Component {
@@ -74,7 +74,7 @@ export default class Signup extends Component {
 
   render() {
     return (
-      <div>
+      <div >
         <div className="contener">
           <div className="formDiv">
             <form className="box" onSubmit={this.submitSignUp}>

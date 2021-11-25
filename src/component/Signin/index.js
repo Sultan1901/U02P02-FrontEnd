@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router";
 import { useState, useEffect } from "react";
-import Style from './style.css'
+import Style from "./style.css";
 import axios from "axios";
 const Login = () => {
   const navigate = useNavigate();
@@ -13,12 +13,10 @@ const Login = () => {
     const items = await axios.get("http://localhost:5000/users/read");
     setUsers(items.data);
     console.log(items.data);
-  
   };
 
   useEffect(() => {
     getData();
-    
   }, []);
 
   const registerPage = () => {
@@ -34,18 +32,15 @@ const Login = () => {
     // console.log("log email",email);
     // console.log("log pass",password);
     users.map((item) => {
-        console.log(item.email);
-        console.log(item.password);
+      console.log(item.email);
+      console.log(item.password);
       if (item.email === email && item.password === password) {
         ckeck = true;
       }
     });
     if (ckeck) {
       try {
-        localStorage.setItem(
-          "newUser",
-          JSON.stringify({ email })
-        );
+        localStorage.setItem("newUser", JSON.stringify({ email }));
         navigate("/Category");
       } catch (error) {
         console.log("error ", error);
@@ -59,32 +54,30 @@ const Login = () => {
 
   return (
     <div>
-      <div className="contener">
-          <div className="formDiv">
-            <form className="box" onSubmit={submitlogin}>
-              <h2>Login</h2>
-              <input
-                type="text"
-                placeholder="Email"
-                onChange={(e) => setEmail(e.target.value)}
-                
-                className="form-control form-group"
-              />
-              <input
-                type="password"
-                placeholder="Password"
-                onChange={(e) => setPassword(e.target.value)}
-                
-                className="form-control form-group"
-              />
-              <input
-                type="submit"
-                className="btn btn-danger btn-block"
-                value="Login"
-              />
-            </form>
-          </div>
+      <div >
+        <div >
+          <form className="box" onSubmit={submitlogin}>
+            <h2>Login</h2>
+            <input
+              type="text"
+              placeholder="Email"
+              onChange={(e) => setEmail(e.target.value)}
+              className="form-control form-group"
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
+              className="form-control form-group"
+            />
+            <input
+              type="submit"
+              className="btn btn-danger btn-block"
+              value="Login"
+            />
+          </form>
         </div>
+      </div>
       {/* <p onClick={registerPage}>Don't have an account ?</p> */}
     </div>
   );
