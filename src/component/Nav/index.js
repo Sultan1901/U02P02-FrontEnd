@@ -21,17 +21,31 @@ const Nav = () => {
     <div className="nav">
       <ul className="ulNav">
         {/* <li className={splitLocation[1] === "" ? "active" : ""}> */}
-       <li>   <Link to="/">Home</Link>{" "}</li>
-         {/* <li> <Link to="/books">Products</Link>{" "}</li> */}
-         {/* <li><Link to="/Signin">Signin</Link>{" "}</li> */}
-         {/* <li><Link to="/Signup">Sigup</Link>{" "}</li> */}
-         <li><Link to="/Stories">Stories</Link>{" "}</li>
-         <li><Link to="/LifeStyle">LifeStyle</Link>{" "}</li>
-         <li><Link to="/Essays">Essays</Link>{" "}</li>
-         <li><Link to="/Cultural">Cultural</Link>{" "}</li>
-         {/* <li> <Link to="/Logout">Logout</Link>{" "}</li> */}
+        <li>
+          {" "}
+          <Link to="/">Home</Link>{" "}
+        </li>
+        {/* <li> <Link to="/books">Products</Link>{" "}</li> */}
+        {/* <li><Link to="/Signin">Signin</Link>{" "}</li> */}
+        {/* <li><Link to="/Signup">Sigup</Link>{" "}</li> */}
+        <li>
+          <Link to="/Stories">Stories</Link>{" "}
+        </li>
+        <li>
+          <Link to="/LifeStyle">LifeStyle</Link>{" "}
+        </li>
+        <li>
+          <Link to="/Essays">Essays</Link>{" "}
+        </li>
+        <li>
+          <Link to="/Cultural">Cultural</Link>{" "}
+        </li>
+        <li>
+          <Link to="/Cart">Cart</Link>{" "}
+        </li>
+
+        {/* <li> <Link to="/Logout">Logout</Link>{" "}</li> */}
         {/* </li> */}
-      
       </ul>
     </div>
   );

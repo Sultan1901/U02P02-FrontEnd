@@ -6,7 +6,7 @@ const index = () => {
         <><div className='cont'>
             <p>Home News Events Archive Archive  Onhold Notify Stats Register Login Disclaimer Contact <br/>
 
-Attribution-NonCommercial-NoDerivs 3.0 Unported License</p>
+NoDerivs 3.0 Unported License</p>
         </div></>
     )
 }

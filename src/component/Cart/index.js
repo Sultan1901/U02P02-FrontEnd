@@ -44,24 +44,23 @@ const Cart = () => {
     <>
     <div>
       {/* <Nav /> */}
-      <p>cart</p>
+      
       {account.length &&
         account.map((item, i) => {
           return (
-           <div className="books">
-              <img src={item.img} className="img" />
-              <h4>{item.name}</h4>
+            <div className="bookscontainer" id="ddd">
+            <div className="books">
+             
+              <img src={item.img} className="img88" />
+              
+              <button className="rmbtn" onClick={()=>{removeFavorite(item._id)}}>Remove from Cart</button>
+            </div><h4>{item.name}</h4>
               <h4>{item.price}</h4>
-              <h4>{item.kind}</h4>
-              <button
-                
-              >
-                Add To Cart
-              </button>
-            </div>
+              </div>
           );
         })}
       </div>
+     
       <Fot />
     </>
         )}

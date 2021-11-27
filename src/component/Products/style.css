@@ -3,8 +3,21 @@ body {
   flex-wrap: wrap;
   width: 100%;
  }
-
-
+.rmbtn{
+  background-color: brown;
+  color: aliceblue;
+  border: none;
+  width: 100px;
+  border-radius: 2px;
+}
+.addbtn{
+  background-color: chartreuse;
+  color: black;
+  border-radius: 2px;
+  border: none;
+  width: 80px;
+  height: 20px;
+}
 
 .bookscontainer {
 
@@ -25,12 +38,12 @@ body {
 
 }
 h4{
-color: rgb(223, 17, 17);
+color: rgb(224, 209, 209);
 margin-top: 20px;
 }
 img{
     width: 100%;
-    height: 50%;
+    height: 40%;
 
 }.books{
   margin: 10px 40px;

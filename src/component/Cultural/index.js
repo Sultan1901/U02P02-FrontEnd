@@ -6,7 +6,6 @@ import Fot from "./../fot/index";
 // import Style from './style.css'
 
 const Products = () => {
-  // const navigate = useNavigate()
   const navigate = useNavigate();
   const [resSearch, setResSearch] = useState("");
   const [local, setLocal] = useState("");
@@ -113,6 +112,7 @@ const Products = () => {
               <h4>{item.price}</h4>
               <h4>{item.kind}</h4>
               <button
+                className="addbtn"
                 onClick={() => {
                   removeOrAdd(item._id);
                 }}
