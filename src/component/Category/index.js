@@ -37,7 +37,7 @@ export const Category = () => {
         <button className="nav1" onClick={Stories}>
           Stories
         </button>
-
+<div className="jjj"></div>
         {/* <Nav /> */}
       </div>
     </div>

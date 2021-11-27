@@ -56,7 +56,7 @@ export default class Signup extends Component {
       this.state.password.length > 0
     ) {
       axios
-        .post("http://localhost:5000/users/add", riges)
+        .post("https://sultanp2b.herokuapp.com/users/add", riges)
         .then((res) => console.log(res));
         
     alert('Signed up successfly')

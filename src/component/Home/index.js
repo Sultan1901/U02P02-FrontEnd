@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 
 import "./style.css";
-// import Nav from "./component/Nav";
+// import fot from "./component/fot";
 export const Home = () => {
   const navigate = useNavigate();
   const signin = () => {
@@ -14,7 +14,7 @@ export const Home = () => {
   };
 
   return (
-    <div>
+    <div><div className='ccec'>
       <h1 className="h1h">Welcome To Home of Books</h1>
       <h1 className="h1h">plese Signup or login here</h1>
 
@@ -24,9 +24,8 @@ export const Home = () => {
       <button className="nav11" onClick={signup}>
         signup
       </button>
-
-      {/* <Nav /> */}
-    </div>
+<div className='ccc'></div>
+    </div></div>
   );
 };
 export default Home;

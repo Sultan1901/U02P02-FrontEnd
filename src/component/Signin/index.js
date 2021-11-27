@@ -10,7 +10,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
 
   const getData = async () => {
-    const items = await axios.get("http://localhost:5000/users/read");
+    const items = await axios.get("https://sultanp2b.herokuapp.com/users/read");
     setUsers(items.data);
     console.log(items.data);
   };
@@ -53,8 +53,8 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <div >
+    
+    
         <div >
           <form className="box" onSubmit={submitlogin}>
             <h2>Login</h2>
@@ -62,24 +62,22 @@ const Login = () => {
               type="text"
               placeholder="Email"
               onChange={(e) => setEmail(e.target.value)}
-              className="form-control form-group"
             />
             <input
               type="password"
               placeholder="Password"
               onChange={(e) => setPassword(e.target.value)}
-              className="form-control form-group"
             />
             <input
               type="submit"
-              className="btn btn-danger btn-block"
+             
               value="Login"
             />
           </form>
         </div>
-      </div>
-      {/* <p onClick={registerPage}>Don't have an account ?</p> */}
-    </div>
+      
+     
+    
   );
 };
 

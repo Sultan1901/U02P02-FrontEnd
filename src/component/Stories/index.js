@@ -17,9 +17,7 @@ const Products = () => {
     // let essay = book.filter(item=>item.kind==Essays)
   }, []);
   const getBook = async () => {
-    const display = await axios.get(
-      "https://sultanp2b.herokuapp.com/products/read"
-    );
+    const display = await axios.get("https://sultanp2b.herokuapp.com/products/read");
     // console.log(display);
     setBook(display.data.filter((item) => item.kind == "Stories"));
     console.log(display.data);

@@ -5,14 +5,14 @@
 }
 
 .home {
-  /* height: 800px; */
+  height: 100%;
   background-image: url("https://i.pinimg.com/originals/67/18/22/671822c2f63dd5f65d8fd15c9710420b.jpg");
   opacity: 0.9;
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
   width: 110%;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   background-repeat: repeat;
   background-color: chocolate;
 
