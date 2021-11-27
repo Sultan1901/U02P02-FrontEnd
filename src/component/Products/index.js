@@ -9,7 +9,9 @@ const Products = () => {
   const navigate = useNavigate()
     const [book, setBook] = useState([]);
   const getBook = async () => {
-    const display = await axios.get('http://localhost:5000/products/read');
+    const display = await axios.get(
+      "https://sultanp2b.herokuapp.com/products/read"
+    );
     console.log(display);
     setBook(display.data);
     

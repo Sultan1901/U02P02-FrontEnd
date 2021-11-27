@@ -54,13 +54,13 @@ const Products = () => {
       // document.getElementById(`${id}`).innerHTML = "Add";
 
       await axios.put(
-        `http://localhost:5000/users/removecart/${local.email}/${id}`
+        `https://sultanp2b.herokuapp.com/users/removecart/${local.email}/${id}`
       );
     } else {
       // document.getElementById(`${id}`).innerHTML = "Remove";
 
       await axios.put(
-        `http://localhost:5000/users/yourcart/${local.email}/${id}`
+        `https://sultanp2b.herokuapp.com/users/yourcart/${local.email}/${id}`
       );
     }
     test = [];

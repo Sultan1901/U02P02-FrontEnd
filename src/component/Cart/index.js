@@ -17,7 +17,7 @@ const Cart = () => {
 
   const getData = async () => {
     const item = await axios.get(
-      `http://localhost:5000/users/cart/${local.email}`
+      `https://sultanp2b.herokuapp.com/users/cart/${local.email}`
     );
     setAccount(item.data);
   };
@@ -37,7 +37,9 @@ const Cart = () => {
 
   // Remove from favorite
   const removeFavorite = (id) => {
-    axios.put(`http://localhost:5000/users/removecart/${local.email}/${id}`);
+    axios.put(
+      `https://sultanp2b.herokuapp.com/users/removecart/${local.email}/${id}`
+    );
     getLocalStorage();
   };
   return (

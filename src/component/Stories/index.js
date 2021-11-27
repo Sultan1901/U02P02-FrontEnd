@@ -17,7 +17,9 @@ const Products = () => {
     // let essay = book.filter(item=>item.kind==Essays)
   }, []);
   const getBook = async () => {
-    const display = await axios.get("http://localhost:5000/products/read");
+    const display = await axios.get(
+      "https://sultanp2b.herokuapp.com/products/read"
+    );
     // console.log(display);
     setBook(display.data.filter((item) => item.kind == "Stories"));
     console.log(display.data);
@@ -36,7 +38,7 @@ const Products = () => {
   const getDataEmail = async () => {
     const user = JSON.parse(localStorage.getItem("newUser"));
     const item = await axios.get(
-      `http://localhost:5000/users/cart/${user.email}`
+      `https://sultanp2b.herokuapp.com/users/cart/${user.email}`
     );
     console.log(item, "item.data");
     setRemAdd(item.data);
@@ -54,13 +56,13 @@ const Products = () => {
       // document.getElementById(`${id}`).innerHTML = "Add";
 
       await axios.put(
-        `http://localhost:5000/users/removecart/${local.email}/${id}`
+        `https://sultanp2b.herokuapp.com/users/removecart/${local.email}/${id}`
       );
     } else {
       // document.getElementById(`${id}`).innerHTML = "Remove";
 
       await axios.put(
-        `http://localhost:5000/users/yourcart/${local.email}/${id}`
+        `https://sultanp2b.herokuapp.com/users/yourcart/${local.email}/${id}`
       );
     }
     test = [];
